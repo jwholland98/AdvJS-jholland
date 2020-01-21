@@ -1,2 +1,4 @@
-# AdvJs-jholland
-Repo for Advanced Programming: JavaScript class
+# Advanced Programming: JavaScript
+Spring 2020
+Jesse Holland
+## Project Status
