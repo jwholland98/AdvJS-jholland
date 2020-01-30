@@ -3,5 +3,5 @@ Spring 2020
 Jesse Holland
 ## Project Status
 
-###Kattis
+### Kattis
 - Solved "What does the fox say?" (2.0 difficulty)
