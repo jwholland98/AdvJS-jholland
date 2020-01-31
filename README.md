@@ -5,3 +5,4 @@ Jesse Holland
 
 ### Kattis
 - Solved "What does the fox say?" (2.0 difficulty)
+- Solved "Beehives" (2.1 difficulty)

@@ -6,8 +6,40 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-function answer(){//remove noises from str
-    
+function cmp(a, b) {
+    if (a > b) return +1;
+    if (a < b) return -1;
+    return 0;
+}
+
+function cmp2(a, b) {
+    if (a < b) return +1;
+    if (a > b) return -1;
+    return 0;
+}
+
+function answer(items){
+    for(i=0;i<items.length;i++){
+        for(j=0;j<items.length;j++){
+            if(i!=j && items[i][0]===items[j][0]){
+                items[i][1]=parseInt(items[i][1])+parseInt(items[j][1]);
+                items.splice(j, 1);
+                j-=1;
+            }
+        }
+    }
+    items.sort(function(a, b) { 
+        return cmp(a[0],b[0])
+    });
+    items.sort(function(a, b) { 
+        return cmp2(parseInt(a[1]),parseInt(b[1]))
+    });
+    let str=items.length + '\n';
+    for(i=0;i<items.length;i++){
+        str+=items[i][0]+' '+items[i][1];
+        if(i!=items.length-1)str += '\n';
+    }
+    return str;
 }
 
 function test(){
@@ -18,29 +50,33 @@ function test(){
 
 function solve() {
     let lineCount = 1;
-    let str = 0;
-    let noises = [];
+    let num = 0;
     let caseNum = 0;
+    let items = [];
     rl.on('line', (line) => {
         if(lineCount == 1){
             caseNum=line;
             lineCount+=1;
         }
         else if (lineCount == 2){
+            //console.log("grabbing: "+ line);
             num = line;
             lineCount += 1;
         }
         else{
-            let inp = line.split(' ');
-            if(inp[0] != "what")
-                noises.push(inp[2]);
+            if(num>1){
+                //console.log("adding: " + line);
+                num-=1;
+                items.push(line.split(' '));
+            }
             else{
-                console.log(answer(str, noises));
+                items.push(line.split(' '));
+                console.log(answer(items));
                 if(caseNum > 1){
                     caseNum-=1;
                     lineCount=2;
-                    str=[];
-                    noises=[]
+                    num=0;
+                    items=[];
                 }
                 else
                     rl.close();
@@ -51,7 +87,7 @@ function solve() {
 
 if (require.main == module) {
     if (process.argv.length > 2 && process.argv[2] === 'test')
-        test()
+        test();
     else
         solve();
 }
