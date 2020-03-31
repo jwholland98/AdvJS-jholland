@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Carbon Footprint Website</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="footprint.js">
+    </script>
+</head>
+<body>
+    <h1>How Good Are You At Reducing Your Carbon Footprint!?</h1>
+    <h2> Your carbon footprint is the total amount of all carbon compounds you emit in your daily life.
+        By lowered your carbon footprint, you help out the environment and help the Earth stay clean.
+        Let's see how well you are reducing your carbon footprint.
+    </h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="box">
+        <div id=questions>
+            <p id="num">Question 1 of 10:</p>
+            <p id="question">How often do you recycle?</p>
+            <div id=choices>
+                <label for="first" class="choices">Always</label>
+                <input type="radio" id="first" name="choice" value="" onClick="verify()">
+                <label for="second" class="choices">Sometimes</label>
+                <input type="radio" id="second" name="choice" value=""onClick="verify()">
+                <label for="third" class="choices">Never</label>
+                <input type="radio" id="third" name="choice" value=""onClick="verify()">
+            </div>
+            <button onClick="changeState()" id="next">next</button>
+            <!--<p id=select>Please select an option</p>-->
+        </div>
+        <div id="finalScore">
+            <div id="finalScore1">Your score:</div>
+            <div id="finalScore2"></div>
+            <div id="howWell"></div>
+            <div id=getBetter></div>
+            <button id="refresh" onClick="refresh()">Take the quiz again!</button>
+        </div>
+    </div>
+</body>
+</html>
