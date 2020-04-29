@@ -13,3 +13,11 @@ Jesse Holland
 
 ### Project 2
 This is a simple questionaire that asks you questions regarding your carbon footprint and grades you based on your response. It will also provide feedback about what you can do better and give you facts in between questions. To run simply open Website.html in your browser.
+
+### Final Project
+
+The link to the final project repo is:
+
+https://github.com/jwholland98/JavaScriptFinal
+
+It should be set to public. My partner for this project is Stephen Marshall.
